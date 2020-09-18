@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<!--font awesome-->
+   <script src="https://kit.fontawesome.com/36a1a3adff.js" crossorigin="anonymous" ></script>
+  <meta name = "viewport"  content="width= device-width, initial-scale= 1.0">
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = " " + localStorage.clickcount + ".";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+</head>
+<body>
+
+    <div style="display: block;">
+
+    <a onclick="clickCounter()" class="btn-floating btn-sm rgba-white-slight mx-1 " href="#">
+      <i style=" " class=" fa fa-thumbs-up fa-2x"></i>
+    </a>
+   <div  id="result" style="font-size: 20px;"></div>
+</div>
+</body>
+</html>
